@@ -14,6 +14,10 @@ public class TeleOpPractice extends OpMode {
 
     @Override
     public void init() {
+    }
+
+    @Override
+    public void loop() {
         frontRight = hardwareMap.get(DcMotor.class, "frontRight");
         frontLeft = hardwareMap.get(DcMotor.class, "frontLeft");
         backRight = hardwareMap.get(DcMotor.class, "backRight");
@@ -27,11 +31,7 @@ public class TeleOpPractice extends OpMode {
         backRight.setDirection(DcMotorSimple.Direction.FORWARD);
         frontLeft.setDirection(DcMotorSimple.Direction.REVERSE);
         backLeft.setDirection(DcMotorSimple.Direction.REVERSE);
-        telemetry.addData("Initialized", "Press start");
-    }
 
-    @Override
-    public void loop() {
         double forward = -gamepad1.left_stick_y;
         double strafe = gamepad1.left_stick_x;
         double rotate = gamepad1.right_stick_x;
